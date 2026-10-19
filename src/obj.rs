@@ -24,7 +24,8 @@ pub fn load(path: &str) -> Result<Model, String> {
                 vertices.push(Vec3::new(c[0], c[1], c[2]));
             }
             Some("f") => {
-                // Cada elemento puede ser "v", "v/vt", "v//vn" o "v/vt/vn"                let mut idx: Vec<usize> = Vec::new();
+                // Cada elemento puede ser "v", "v/vt", "v//vn" o "v/vt/vn"
+                let mut idx: Vec<usize> = Vec::new();
                 for token in parts {
                     let raw = token.split('/').next().unwrap_or("");
                     let i: i64 = raw
